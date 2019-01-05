@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Store Page</title>
+        <!--這邊也要做一樣的事情-->
+        <script src="http://localhost:8008/socket.io/socket.io.js"></script>
+
+        <!--其他東西寫到另一個js檔案-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="store.js"></script>
+        <link rel="stylesheet" href="store.css" type="text/css">
+    </head>
+    <body>
+        <div id="board">
+            <div>
+                <h3>ToDo</h3><h3>In Progress</h3><h3>Done</h3>
+            </div>
+            <ul id="todo">
+            </ul>
+            <ul id="inprogress">
+            </ul>
+            <ul id="done">
+            </ul>
+        </div>
+    </body>
+</html>

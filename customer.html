@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Customer Page</title>
+        <!--在這邊我們連線到 剛剛建立的 Server 取得我們所需要的 js 檔-->
+        <script src="http://140.121.197.192:8008/socket.io/socket.io.js"></script>
+
+        <!--其他東西Orz-->
+        <script src="menu.js"></script>
+        <link rel="stylesheet" href="customer.css" type="text/css">
+        <link rel="stylesheet" href="animate.css" type="text/css">
+    </head>
+    <body>
+        <!--我先在這邊做一個測試輸入框跟 按鈕 我期望按下按鈕可以把輸入框內的內容送到server-->
+        <!--<input id="inputText" type="text">
+        <input id="btn" type="button" value="送出">-->
+        <div id="sitebody">
+            <div id="header"></div>
+            <div id="sidebar_left">
+                    <div class="box animLine" style="background-image:url(images/一餐.jpg)" onclick="changeRestaurant(1)" onmouseover="playclip2()" onmousedown="playclip()"></div>
+                    
+                    <div class="box animLine" style="background-image:url(images/二餐.jpg)" onclick="changeRestaurant(2)" onmouseover="playclip2()" onmousedown="playclip()"></div>
+            </div>
+            <div id="sidebar_left2">       
+                <div><img id ="shop1" class="box animLine" src="images/威肯創意廚房.jpg" alt="WeCan威肯創意廚房" title="WeCan威肯創意廚房" onclick="changeMenu(1)"  onmouseover="playclip2()" onmousedown="playclip()"></div>
+                <div><img id ="shop2" class="box animLine" src="images/元圓圓.jpg" alt="元圓圓" title="元圓圓"  onclick="changeMenu(2)"  onmouseover="playclip2()" onmousedown="playclip()"></div>
+                <div><img id ="shop3" class="box animLine" src="images/山多利美食.jpg" alt="山多利美食" title="山多利美食" onclick="changeMenu(3)"  onmouseover="playclip2()" onmousedown="playclip()"></div>
+                <div><img id ="shop4" class="box animLine" src="images/胖晏子.jpg" alt="胖晏子" title="胖晏子" onclick="changeMenu(4)"  onmouseover="playclip2()" onmousedown="playclip()"></div>
+                <div><img id ="shop5" class="box animLine" src="images/樂多堡複合式餐飲.jpg" alt="樂多堡複合式餐飲" title="樂多堡複合式餐飲" onclick="changeMenu(5)"  onmouseover="playclip2()" onmousedown="playclip()"></div>
+                <div><img id ="shop6" class="box animLine" src="images/興和知品.jpg" alt="興和知品" title="興和知品" onclick="changeMenu(6)"  onmouseover="playclip2()" onmousedown="playclip()"></div>
+            </div>
+            <div id="content">
+                <div id="menuDiv">
+                        
+                </div>
+            </div>
+            <div id="queue">
+                <nav class="queue">Order
+                    <ul id="1">
+                                
+                    </ul>
+                </nav>
+                <nav class="queue">Ready
+                    <ul id="ready">
+                    </ul>
+                 </nav>
+                 
+            </div>
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,272 @@
+body {
+    background-image: url(images/background1.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#sitebody {
+    width: 1800px;
+    height: 700px;
+    margin: 0 auto;
+    font-size: 13px;
+}
+#header {
+    /*background-color: #FFD4D4;*/
+    height: 15%;
+    text-align: center;
+    line-height: 80px;
+}
+#sidebar_left {
+    
+    width: 15%;
+    height: 100%;
+    text-align: center;
+    line-height: 400px;
+    float: left;
+}       
+#sidebar_left2 {
+    
+    width: 15%;
+    height: 700px;
+    text-align: center;
+    line-height: 400px;
+    float: left;
+    overflow-y: scroll;
+    overflow-x: hidden;    
+}
+#sidebar_left2::-webkit-scrollbar {
+    display: none;
+}
+#sidebar_left2 img {
+    width: 100%;
+    height: 300px;
+    margin: 10px;
+}
+#content {
+    margin-left: 120px;
+    margin-right: 120px;
+    height: 100%;
+    
+    text-align: center;
+    line-height: 30px;
+}
+#menuDiv {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:40%;
+    height:100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align:left;
+    position: relative;
+}
+#footer {
+    clear: both;
+    background-color: #FFD4D4;
+    height: 15%;
+    text-align: center;
+    line-height: 80px;
+}
+img {
+    display: block;
+    height: 100%;
+}
+.box {
+    /*width and height should be same*/
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+  }
+  
+  .animLine {
+    background-size: cover;
+    float: left;
+    margin: 4px;
+    box-shadow: 0 2px 4px #000;
+    position: relative;
+    transform: scale(0.9);
+    transition: .1s;
+  }
+  
+  .animLine:hover {
+    transform: scale(1);
+    box-shadow: 0 2px 4px #000, 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animLine:hover:before,
+  .animLine:hover:after {
+    position: absolute;
+    content: "";
+    background: linear-gradient(90deg, #ddd 40%, transparent 40%);
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    z-index: 1;
+    border-radius: 4px;
+    background-size: 200% 4px;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 8px #fff);
+    background-position: 80% 0;
+  }
+  
+  .animLine:hover:before {
+    animation: beforeLineAnim 2s linear infinite;
+  }
+  
+  .animLine:hover:after {
+    animation: afterLineAnim 2s linear infinite;
+    transform: rotate(-90deg);
+    background-position: -20% 0;
+  }
+  
+  @keyframes beforeLineAnim {
+    45%,
+    50% {
+      background-position: -100% 0;
+    }
+    45% {
+      transform: scale(1)
+    }
+    50%,
+    95% {
+      transform: scale(1, -1)
+    }
+    95% {
+      background-position: 80% 0
+    }
+  }
+  
+  @keyframes afterLineAnim {
+    20%,
+    25% {
+      background-position: -100% 0;
+    }
+    20% {
+      transform: scale(1) rotate(-90deg)
+    }
+    25% {
+      transform: scale(-1, 1) rotate(-90deg)
+    }
+    70%,
+    75% {
+      background-position: 80% 0;
+    }
+    70% {
+      transform: scale(-1, 1) rotate(-90deg)
+    }
+    75% {
+      transform: scale(1, 1) rotate(-90deg)
+    }
+  }
+
+#msg {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    color: blue;
+    top: 50%;
+    left: 50%;
+}
+table {
+    text-align: center;
+}
+
+/*Menu1 Table*/
+#menu1Table  {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    font-size: 14px;  
+    text-align: center;
+}
+#menu1Table tr td{
+    padding: 0px 5px 0px 5px;
+}   
+.gotFood:hover {
+    background-color: darkgrey;
+    cursor: pointer;
+}
+.noFood:hover {
+    background-color: transparent;
+}
+.gotFood2:hover{
+    background-color:red;
+    cursor:cell;
+}
+ul {
+   margin-left:30px;
+}
+#menu2Table {
+    position: absolute;
+    top: 10%;
+    left: 18%;
+    font-size: 14px;
+    text-align: center;
+}
+#menu3Table {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    font-size: 16px;
+    text-align: center;
+}
+#menu3Table td {
+    font-weight: bold;
+}
+#menu4Table {
+    position: absolute;
+    top: 38%;
+    left: 15%;
+    font-size: 14px;
+    text-align: center;
+}
+#menu4Table1, #menu4Table2, #menu4Table3 {
+    float: left;  
+}
+#menu5Table {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    font-size: 10px;
+    text-align: center;
+}
+#menu6Table {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    font-size: 14px;
+    text-align: center;
+}
+#menu6Table1, #menu6Table2, #menu6Table3 {
+    float: left;  
+}
+.orderqueue{
+  background-color:lightgreen;
+  color:black;
+  size:20px;
+  border:'1';
+
+}
+#queue nav             { font-weight: bold;
+    color: white;
+    border:none;
+    text-align: center;
+    font-size:30px;
+    color:red;
+    width:30%;
+    height:relative;
+    background-color:transparent;
+     }
+#queue nav ul          { display: none;
+         list-style: none;
+          margin: 0;
+        padding: 0; }
+#queue nav:hover ul    { display: block; }
+#queue nav ul li       { border-top: 2px solid #FFD4D4; ;
+    background-color:lightyellow;
+    width:relative;
+    color: black; }
+#queue nav ul li:hover { background-color: lightcoral; }
+

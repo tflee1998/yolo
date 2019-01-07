@@ -1,13 +1,13 @@
 var tagUUID = 3;
 
 function init() {
-    var socket = io("http://localhost:8008");
+    var socket = io("http://140.121.197.192:8008");
 
     socket.on("orderMessage", function (data) {
         alert(data.message);
         console.log(data.message);
 
-        //²£¥Í·sªº¼ĞÅÒÅo~~
+        //ï¿½ï¿½ï¿½Í·sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½o~~
         var tag = document.createElement("li");
         tag.setAttribute("id", "item" + tagUUID);
         tag.setAttribute("draggable", "true");
@@ -22,11 +22,12 @@ function init() {
 
         tagUUID++;
 
-        //±N¼ĞÅÒ¥[¤Jtodo list
+        //ï¿½Nï¿½ï¿½ï¿½Ò¥[ï¿½Jtodo list
         $("#todo").append(tag);
     })
 
     $(document).ready(function () {
+        getDoneItem();
         $('li').bind('dragstart', function (event) {
             event.originalEvent.dataTransfer.setData("text/plain", event.target.getAttribute('id'));
         });
@@ -52,7 +53,32 @@ function init() {
             event.target.appendChild(document.getElementById(listitem));
             event.preventDefault();
         });
+
     });
+
+    $('#done').on('click', 'li', function(){
+        $(this).text();
+        var txt = confirm("ç¢ºå®šå®Œæˆå—ï¼Ÿ");
+        var text = $(this).text();
+        if(txt == true)
+        {
+            socket.emit("doneMessage", { message : text });
+            console.log(text);
+        }
+    })
+
+
+   
 }
+
+function getDoneItem()
+{
+    var doneItems = document.querySelectorAll('.doneList li');
+    for(let i = 0; i < doneItems.length; i ++)
+    {
+        console.log(doneItems[i].textContent);
+    }
+}
+
 
 window.addEventListener("load", init, false);

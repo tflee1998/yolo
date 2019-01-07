@@ -15,7 +15,13 @@ io.on('connection', function(socket){
 
     //收到訊息後 轉發給 store
     socket.broadcast.emit("orderMessage", data);
+
   })
+  socket.on("doneMessage", function(data) {
+    console.log("doneMessage: " + data.message);
+
+    socket.broadcast.emit("queueMessage", data);
+  }) 
 });
 
 //基本上Server這邊我們只需要告訴他 我們想要使用的 port 然後使用者連線上來我需要印出字來

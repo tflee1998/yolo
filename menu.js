@@ -12,6 +12,7 @@ socket.on("queueMessage", function (data) {
     var textnode = document.createTextNode(data.message);
     node.appendChild(textnode);
     document.getElementById("ready").appendChild(node);
+    playclip6();
 })
 
 
@@ -1863,6 +1864,22 @@ function playclip5()
         });
     }
 }
+function playclip6()
+{
+    var audio = new Audio();
+    audio.src = "sound/knock.mp3";
+    var playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+        playPromise.then(_ => {
+        // 这个时候可以安全的暂停
+        video.pause();
+        })
+        .catch(error => {
+
+        });
+    }
+}
 var audio1 = new Audio();
 audio1.src = "sound/bing.wav";
 var audio2 = new Audio();
@@ -1873,4 +1890,6 @@ var audio4 = new Audio();
 audio4.src = "sound/select.wav";
 var audio5 = new Audio();
 audio5.src = "sound/popup+runtitle.wav";
+var sudio6=new Audio();
+audio6.src="sound/knock.mp3"
 window.addEventListener("load", createMenu, false);
